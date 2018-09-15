@@ -1,0 +1,60 @@
+\usepackage{times,titletoc}
+\usepackage{hyperref}
+%\usepackage[cm]{fullpage}
+
+ %\pagestyle{myheadings}
+%\markboth{-}{Applied Mathematics - Syllabus}
+%\usepackage{biblatex,minitoc}
+
+%\DefineBibliographyStrings{english}{%
+%  references = {\scshape\mdseries\normalsize Books},% replace "references" % with "bibliography"  for `book`/`report`
+%}
+\setlength\parindent{0pt}
+\setcounter{secnumdepth}{0}
+\setlength{\parskip}{1em}
+
+\titlecontents{section} % set formatting for \section -
+                        % \subsection must be formatted separately 
+[2.3em]                 % adjust left margin
+{\rmfamily}             % font formatting
+{\contentslabel{2.3em}} % section label and offset
+{\hspace*{-2.3em}}
+{\titlerule*[1pc]{.}\contentspage}
+
+
+\makeatletter
+\def\coursecode#1{\gdef\@coursecode{#1}}
+\def\@coursecode{\@latex@error{No \noexpand\coursecode given}\@ehc}
+
+\def\coursename#1{\gdef\@coursename{#1}}
+\def\@coursename{\@latex@error{No \noexpand\coursename given}\@ehc}
+
+\def\credit#1{\gdef\@credit{#1}}
+\def\@credit{\@latex@error{No \noexpand\credit given}\@ehc}
+
+\def\lecture#1{\gdef\@lecture{#1}}
+\def\@lecture{\@latex@error{No \noexpand\lecture given}\@ehc}
+
+\def\tutorial#1{\gdef\@tutorial{#1}}
+\def\@tutorial{\@latex@error{No \noexpand\tutorial given}\@ehc}
+
+\def\lab#1{\gdef\@lab{#1}}
+\def\@lab{\@latex@error{No \noexpand\lab given}\@ehc}
+
+\def\courseinfo{\vspace{1cm}{ \large \bf \noindent \@coursecode~(\@coursename) \hspace{\fill} Credit (L-T-P) : \@credit~(\@lecture - \@tutorial - \@lab) }\vspace{0.5cm}}
+%\def\courseinfo{{\normalsize
+%\@coursecode~(\@coursename) \hspace{\fill} Credit (L-T-P) : \@credit~(\@lecture - \@tutorial - \@lab) 
+%}}
+\newcommand\unit[1]{
+\vspace{0.3cm} \noindent {\bf Unit  #1\\}
+}
+
+\makeatother
+
+%\def\pagewise{\gdef\@pagewise}
+%\def\@pagewise{
+%\if \@pagewise
+%\newcommand{\add}{\include}
+%\else
+\newcommand{\add}{\input}
+%\fi}

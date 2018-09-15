@@ -1,0 +1,170 @@
+%&pdflatex
+
+\documentclass[12pt]{article}
+\usepackage{gbucourse,amsmath,amssymb}
+\usepackage{soul}
+\usepackage{multicol,graphicx}
+%\usepackage{a4wide,graphicx}
+\renewcommand{\refname}{\normalsize Books}
+\newcommand{\cols}{2}
+%\pagewise
+%\pagestyle{sideheading}
+%\usepackage{compactbib}
+%\usepackage{natbib}
+%\setlength{\bibsep}{0.0pt}
+
+
+
+% ADD THE FOLLOWING COUPLE LINES INTO YOUR PREAMBLE
+\let\OLDthebibliography\thebibliography
+\renewcommand\thebibliography[1]{
+  \OLDthebibliography{#1}
+  \setlength{\parskip}{0pt}
+  \setlength{\itemsep}{0pt plus 0.3ex}
+}
+%%%%%%%%%%%%%%%%%%%55
+\usepackage{color,colortbl}
+\definecolor{Gray}{gray}{0.85}
+\includeonly{ma111}
+
+\begin{document}
+
+\begin{titlepage}
+
+\begin{center}
+
+
+\vspace{2cm}
+{\Large COURSE STRUCTURE AND DETAILED SYLLABUS}
+
+\vspace{1cm}
+{\Large {of }}
+
+\vspace{1cm}
+{\Large  {M.Sc./Ph.D}}
+
+\vspace{1cm}
+{\Large  {Detailed Syllabus for  B.Tech.+M.Tech./MBA}}
+
+
+\vspace{1cm}
+{\huge \bf As per CBCS}
+
+\vfill
+{\huge \bf Approved in 7th Board of Studies held on 08.08.15}
+
+\vspace{3cm}
+{\huge \bf {Deptt. of Applied Mathematics}}
+
+\vspace{3cm}
+\includegraphics[width=1.5in]{logo}
+
+\vspace{1cm}
+{\bf \huge {School of Vocational Studies  and Applied Sciences}}
+
+\vspace{1cm}
+{\uppercase{ \Large \bf  {GAUTAM BUDDHA UNIVERSITY}}}
+
+\vspace{1cm}
+{\large {GAUTAM BUDH NAGAR, GREATER NOIDA}}
+
+\vspace{1cm}
+{\huge 2015-2016}
+\end{center}
+\end{titlepage}
+
+\title{Gautam Buddha University \\ School of Vocational Studies and Applied Sciences\\ Mathematics Courses}
+\author{Department of Applied Mathematics \\ \textbf{B.Tech.+M.Tech./MBA} \\{ (Engineering/ICT/Biotechnology/Food Processing and Technology)}}
+\date{Session 2015-2016}
+\maketitle
+\vspace{-1cm}
+\tableofcontents
+\newpage
+BTECH
+\part{\normalsize B.Tech.+M.Tech./MBA \\ (Engineering/ICT/Biotechnology/Food Processing and Technology)}
+\begin{multicols}{\cols}
+\add{btech/ma101}
+\add{btech/ma102}
+\add{btech/ma103}
+\add{btech/ma104}
+\add{btech/ma201}
+\add{btech/ma202}
+\add{btech/ma203}
+\add{btech/ma205}
+\end{multicols}
+\newpage
+\part{\normalsize M.Tech. \\(Engineering/ICT/Biotechnology)}
+\begin{multicols}{\cols}
+\add{mtech/ma107}
+\add{mtech/ma108}
+\add{mtech/ma402}
+\add{mtech/ma415}
+\end{multicols}
+\newpage
+\part{\normalsize B.Sc. \\(Applied Mathematics)}
+\add{bsc/ma111}
+\newpage
+\part{\normalsize M.Sc. \\(Applied Mathematics)}
+\add{msc/structure}
+\newpage
+\rule{100mm}{3pt}
+\section{\scshape First Semester}
+\credit{5}
+\lecture{4}
+\tutorial{1}
+\lab{0}
+
+\begin{multicols}{\cols}
+\add{msc/ma401}
+\add{msc/ma403}
+\add{msc/ma405}
+\add{msc/ma407}
+\add{msc/ma409}
+%\add{msc/ma417}
+%\add{msc/sec1sem}
+%\add{msc/aecc}
+\end{multicols}
+\rule{100mm}{3pt}
+\section{\scshape  Second Semester}
+\begin{multicols}{\cols}
+\add{msc/ma404}
+%\add{msc/ma406}  
+%\add{msc/ma408}
+%\add{msc/ma410}
+%\add{msc/ma414}
+%\add{msc/ma416}
+\end{multicols}
+\rule{100mm}{3pt}
+\section{\scshape  Third Semester}
+\begin{multicols}{\cols}
+%\section{Generic Elective Course}
+%An elective course of PG level chosen from an unrelated discipline/subject/other departments/other %schools
+
+\add{msc/ge3sem}
+\add{msc/ma507}
+%\add{msc/ma513}
+%\add{msc/ma515}
+%\add{DSEI3sem}
+%\add{msc/ma517}
+%\add{msc/sec3sem}
+\end{multicols}
+\rule{100mm}{3pt}
+\section{\scshape  Fourth Semester}
+\vspace{-0.2cm}
+\begin{multicols}{\cols}
+%\add{msc/ma508}
+%\add{msc/ma509}  % This ma506
+%\add{msc/ma511}
+\add{msc/ma520}
+\end{multicols}
+\newpage
+\part{\normalsize Ph.D. Applied Mathematics}
+\add{phd/structure}
+\begin{multicols}{\cols}
+\add{phd/phd}
+\end{multicols}
+
+\newpage
+\add{msc/mscopt}
+
+\end{document}

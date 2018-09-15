@@ -1,0 +1,120 @@
+
+\usepackage{times,titletoc}
+%\usepackage{mathpazo,titletoc}
+\usepackage[hidelinks]{hyperref}
+%\usepackage[cm]{fullpage}
+
+
+
+%\pagestyle{myheadings}
+\markboth{-}{Applied Mathematics - Syllabus}
+%\usepackage{biblatex,minitoc}
+
+%\DefineBibliographyStrings{english}{%
+%  references = {\scshape\mdseries\normalsize Books},% replace "references" % with "bibliography"  for `book`/`report`
+%}
+\setlength\parindent{0pt}
+\setcounter{secnumdepth}{0}
+
+\newcounter{dsccode}[part]
+\renewcommand*{\thedsccode}{%
+  \textbf{%
+   % \ifnum\value{dsccode}<1000 0\fi
+    \ifnum\value{dsccode}<100 0\fi
+    \ifnum\value{dsccode}<10 0\fi
+    \arabic{dsccode}%
+  }%
+}
+\titlecontents{section} % set formatting for \section -
+                        % \subsection must be formatted separately 
+[2.3em]                 % adjust left margin
+{\rmfamily}             % font formatting
+{\contentslabel{2.3em}} % section label and offset
+{\hspace*{-2.3em}}
+{\titlerule*[1pc]{.}\contentspage}
+\newcommand\courseauthor[1]{\marginpar{\tiny #1}}
+
+\makeatletter
+\def\coursecode#1{\gdef\@coursecode{#1}}
+\def\@coursecode{\@latex@error{No \noexpand\coursecode given}\@ehc}
+
+\def\coursename#1{\gdef\@coursename{#1}}
+\def\@coursename{\@latex@error{No \noexpand\coursename given}\@ehc}
+
+\def\credit#1{\gdef\@credit{#1}}
+\def\@credit{\@latex@error{No \noexpand\credit given}\@ehc}
+
+%\def\lecture#1{\gdef\@lecture{#1}}
+%\def\@lecture{\@latex@error{No \noexpand\lecture given}\@ehc}
+
+\newcommand{\lecture}[1]{\def\@lecturename{#1}}\lecture{4}
+\def\@lecture{\@lecturename}
+
+
+\def\tutorial#1{\gdef\@tutorial{#1}}
+\def\@tutorial{\@latex@error{No \noexpand\tutorial given}\@ehc}
+
+\def\lab#1{\gdef\@lab{#1}}
+\def\@lab{\@latex@error{No \noexpand\lab given}\@ehc}
+
+%\def\courseinfo{\vspace{1cm}{ \large \bf \noindent \@coursecode~(\@coursename) \hspace{\fill} Credit (L-T-P) : \@credit~(\@lecture - \@tutorial - \@lab) }\vspace{0.5cm}}
+\def\courseinfo{%
+{\normalsize 
+\@coursecode~(\@coursename) \\ {\footnotesize Credits (L-T-P) : \@credit~(\@lecture - \@tutorial - \@lab)} 
+}}
+
+\def\dsccourseinfo{%
+{\normalsize 
+MA~\addtocounter{dsccode}{1}\thedsccode~(\@coursename) \\ {\footnotesize Credits (L-T-P) : \@credit~(\@lecture - \@tutorial - \@lab)} 
+}}
+
+\newcommand\unit[1]{
+\vspace{0.3cm} \noindent {\bf Unit  #1\\}
+}
+
+\makeatother
+
+%\def\pagewise{\gdef\@pagewise}
+%\def\@pagewise{
+%\if \@pagewise
+%\newcommand{\add}{\include}
+%\else
+\newcommand{\add}{\input}
+%\fi}
+\usepackage{tikz,fancyhdr}
+\usetikzlibrary{shapes.misc}
+\usepackage{varwidth}
+\fancypagestyle{sideheading}{%
+  %% Clear all headers and footers
+  \fancyhf{}
+    %% Right headers on odd pages
+  \fancyhead[RO]{%
+      \begin{tikzpicture}[overlay,remember picture]
+      \node[fill=blue!70,text=white,
+      inner ysep=12pt, inner xsep=20pt,
+      rounded rectangle,
+      execute at begin node={\begin{varwidth}{\textheight}},%<====
+      execute at end node={\end{varwidth}},
+      rotate=90]
+      at ([xshift=-8mm,yshift=0mm]current page.east)
+      			{\sffamily\nouppercase{\bf Approved by 12th BOS 24 August 2018}};
+      			%      			{\sffamily\nouppercase{Approved by 7th BOS 8 August 2015}};
+    \end{tikzpicture}
+        }
+        %% Left headers on even pages
+\fancyhead[LE]{%
+\begin{tikzpicture}[overlay,remember picture]
+      \node[fill=magenta!50,text=white,
+      inner ysep=12pt, inner xsep=20pt,
+      rounded rectangle,
+      execute at begin node={\begin{varwidth}{\textheight}},%<====
+      execute at end node={\end{varwidth}},
+      rotate=90]
+      at ([xshift=8mm,yshift=0mm]current page.west)
+      {\sffamily\nouppercase{\bf Approved by 12th BOS 24 August 2018}};
+    \end{tikzpicture}
+        }
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+  \fancyfoot[R]{\thepage}
+}
